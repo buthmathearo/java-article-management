@@ -131,7 +131,7 @@ public class FileIO {
 		ObjectInputStream obj = null;
 		try {
 			obj = new ObjectInputStream(new FileInputStream(path));
-			return obj.readObject();
+			return (List<Object>) obj.readObject();
 		} catch (FileNotFoundException e) {
 			printError(e);
 			return null;
